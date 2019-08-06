@@ -1,0 +1,11 @@
+﻿  alutBufferData.cpp
+  alutCodec.cpp
+  alutError.cpp
+  alutInit.cpp
+  alutInputStream.cpp
+  alutLoader.cpp
+  alutOutputStream.cpp
+  alutUtil.cpp
+  alutVersion.cpp
+  alutWaveform.cpp
+  alut.vcxproj -> C:\Users\Braun\Desktop\Oath3D-master\x64\Release\alut.lib

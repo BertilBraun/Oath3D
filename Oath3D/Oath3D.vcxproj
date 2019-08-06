@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Dist|x64">
+      <Configuration>Dist</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{F7DDE5C4-9931-475D-8FA4-B63550CE3E41}</ProjectGuid>
+    <RootNamespace>OathEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>src/;../deps/include/;../Bullet/src/;../ImGui/src/;</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>Common/Common.h</PrecompiledHeaderFile>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>assimp.lib;openal32.lib;glfw3.lib;glew32.lib;OpenGL32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../deps/lib/</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>src/;../deps/include/;../Bullet/src/;../ImGui/src/;</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>Common/Common.h</PrecompiledHeaderFile>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_RELEASE;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>assimp.lib;openal32.lib;glfw3.lib;glew32.lib;OpenGL32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../deps/lib/</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>src/;../deps/include/;../Bullet/src/;../ImGui/src/;</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>Common/Common.h</PrecompiledHeaderFile>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DIST;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>assimp.lib;openal32.lib;glfw3.lib;glew32.lib;OpenGL32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../deps/lib/</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\alut\alut.vcxproj">
+      <Project>{4a2e0bba-925d-4bf5-a25a-f2863883cea1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Bullet\Bullet.vcxproj">
+      <Project>{e47a4246-d157-4855-b741-09cf7cfe196f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ImGui\ImGui.vcxproj">
+      <Project>{4133384d-cb6c-4a75-91b0-f1fdf301ac9d}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Common\Common.h" />
+    <ClInclude Include="src\Common\Datatype\ai.h" />
+    <ClInclude Include="src\Common\Datatype\glm.h" />
+    <ClInclude Include="src\Common\Datatype\String.h" />
+    <ClInclude Include="src\Common\Datatype\Vector.h" />
+    <ClInclude Include="src\Common\MathDef.h" />
+    <ClInclude Include="src\Common\Settings.h" />
+    <ClInclude Include="src\Common\Util.h" />
+    <ClInclude Include="src\Component\Asset\AnimatedAsset.h" />
+    <ClInclude Include="src\Component\Asset\Asset.h" />
+    <ClInclude Include="src\Component\Asset\Listener\AnimationListener.h" />
+    <ClInclude Include="src\Component\Asset\Listener\AssetListener.h" />
+    <ClInclude Include="src\Component\Asset\Loader\AnimationLoader.h" />
+    <ClInclude Include="src\Component\Asset\Loader\AssetLoader.h" />
+    <ClInclude Include="src\Component\Asset\Loader\BaseLoader.h" />
+    <ClInclude Include="src\Component\Asset\Model\Animation\AnimatedMesh.h" />
+    <ClInclude Include="src\Component\Asset\Model\Animation\AnimIndexModel.h" />
+    <ClInclude Include="src\Component\Asset\Model\Asset\AssetMesh.h" />
+    <ClInclude Include="src\Component\Asset\Model\Asset\IndexModel.h" />
+    <ClInclude Include="src\Component\Asset\Model\BasicMesh.h" />
+    <ClInclude Include="src\Component\Asset\Model\Material.h" />
+    <ClInclude Include="src\Component\Asset\Model\Texture.h" />
+    <ClInclude Include="src\Component\Camera\Camera.h" />
+    <ClInclude Include="src\Component\Camera\CameraListener.h" />
+    <ClInclude Include="src\Component\Camera\CameraSystem.h" />
+    <ClInclude Include="src\Component\Camera\FreeLook.h" />
+    <ClInclude Include="src\Component\Camera\FreeMove.h" />
+    <ClInclude Include="src\Component\Camera\Frustum.h" />
+    <ClInclude Include="src\Component\Control\Billboard.h" />
+    <ClInclude Include="src\Component\Control\BillboardSystem.h" />
+    <ClInclude Include="src\Component\Physik\Collider.h" />
+    <ClInclude Include="src\Component\Physik\InteractionWorld.h" />
+    <ClInclude Include="src\Component\Physik\RigidBody.h" />
+    <ClInclude Include="src\Component\Sound\Sound.h" />
+    <ClInclude Include="src\Component\Sound\SoundSystems.h" />
+    <ClInclude Include="src\Examples\AnimationExample.h" />
+    <ClInclude Include="src\Examples\DeferredExample.h" />
+    <ClInclude Include="src\Examples\EventExample.h" />
+    <ClInclude Include="src\Examples\ExampleBase.h" />
+    <ClInclude Include="src\Examples\ParentingExample.h" />
+    <ClInclude Include="src\Examples\PPDisplayDeferred.h" />
+    <ClInclude Include="src\Examples\PPEffectInverseColor.h" />
+    <ClInclude Include="src\Examples\PPExample.h" />
+    <ClInclude Include="src\Examples\ShadowExample.h" />
+    <ClInclude Include="src\Examples\SoundExample.h" />
+    <ClInclude Include="src\System\Application\Application.h" />
+    <ClInclude Include="src\System\Application\StateBase.h" />
+    <ClInclude Include="src\System\ECS\Component.h" />
+    <ClInclude Include="src\System\ECS\Entity.h" />
+    <ClInclude Include="src\System\ECS\FLAGS.h" />
+    <ClInclude Include="src\System\ECS\Include.h" />
+    <ClInclude Include="src\System\ECS\Listener.h" />
+    <ClInclude Include="src\System\ECS\Manager.h" />
+    <ClInclude Include="src\System\ECS\Script.h" />
+    <ClInclude Include="src\System\ECS\System.h" />
+    <ClInclude Include="src\System\ECS\SystemList.h" />
+    <ClInclude Include="src\System\ECS\Transform.h" />
+    <ClInclude Include="src\System\Events\Dispatcher.h" />
+    <ClInclude Include="src\System\Events\Subscriber.h" />
+    <ClInclude Include="src\System\Loader\Loader.h" />
+    <ClInclude Include="src\System\Loader\stb_image.h" />
+    <ClInclude Include="src\System\Logger\Logger.h" />
+    <ClInclude Include="src\System\Logger\Stopwatch.h" />
+    <ClInclude Include="src\System\Renderer\Debug\BulletDebugDraw.h" />
+    <ClInclude Include="src\System\Renderer\Deferred\DeferredRenderer.h" />
+    <ClInclude Include="src\System\Renderer\Deferred\FBO.h" />
+    <ClInclude Include="src\System\Renderer\Lights\Lights.h" />
+    <ClInclude Include="src\System\Renderer\Lights\LightSystems.h" />
+    <ClInclude Include="src\System\Renderer\MasterRenderer.h" />
+    <ClInclude Include="src\System\Renderer\Particles\ParticleSystem.h" />
+    <ClInclude Include="src\System\Renderer\PostProcessing\PostEffect.h" />
+    <ClInclude Include="src\System\Renderer\PostProcessing\SSR.h" />
+    <ClInclude Include="src\System\Renderer\RenderEnums.h" />
+    <ClInclude Include="src\System\Renderer\Shader\Shader.h" />
+    <ClInclude Include="src\System\Renderer\Shadow\ShadowBox.h" />
+    <ClInclude Include="src\System\Renderer\Shadow\ShadowRenderer.h" />
+    <ClInclude Include="src\System\Renderer\Skybox\Skybox.h" />
+    <ClInclude Include="src\System\Renderer\Systems\AnimationRenderer.h" />
+    <ClInclude Include="src\System\Renderer\Systems\AssertRenderer.h" />
+    <ClInclude Include="src\System\Resource\ResourceHolder.h" />
+    <ClInclude Include="src\System\Resource\ResourceManager.h" />
+    <ClInclude Include="src\System\System\Clock.h" />
+    <ClInclude Include="src\System\System\Debug.h" />
+    <ClInclude Include="src\System\System\FileSystem.h" />
+    <ClInclude Include="src\System\System\Keyboard.h" />
+    <ClInclude Include="src\System\System\ToggleKey.h" />
+    <ClInclude Include="src\System\Window\Window.h" />
+    <ClInclude Include="src\Test.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Common\Common.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\Common\Datatype\String.cpp" />
+    <ClCompile Include="src\Component\Asset\Listener\AnimationListener.cpp" />
+    <ClCompile Include="src\Component\Asset\Listener\AssetListener.cpp" />
+    <ClCompile Include="src\Component\Asset\Loader\AnimationLoader.cpp" />
+    <ClCompile Include="src\Component\Asset\Loader\AssetLoader.cpp" />
+    <ClCompile Include="src\Component\Asset\Loader\BaseLoader.cpp" />
+    <ClCompile Include="src\Component\Asset\Model\Animation\AnimatedMesh.cpp" />
+    <ClCompile Include="src\Component\Asset\Model\Animation\AnimIndexModel.cpp" />
+    <ClCompile Include="src\Component\Asset\Model\Asset\AssetMesh.cpp" />
+    <ClCompile Include="src\Component\Asset\Model\Asset\IndexModel.cpp" />
+    <ClCompile Include="src\Component\Asset\Model\BasicMesh.cpp" />
+    <ClCompile Include="src\Component\Asset\Model\Material.cpp" />
+    <ClCompile Include="src\Component\Camera\Camera.cpp" />
+    <ClCompile Include="src\Component\Camera\CameraListener.cpp" />
+    <ClCompile Include="src\Component\Camera\CameraSystem.cpp" />
+    <ClCompile Include="src\Component\Camera\Frustum.cpp" />
+    <ClCompile Include="src\Component\Physik\InteractionWorld.cpp" />
+    <ClCompile Include="src\Component\Physik\RigidBody.cpp" />
+    <ClCompile Include="src\Component\Sound\Sound.cpp" />
+    <ClCompile Include="src\Component\Sound\SoundSystems.cpp" />
+    <ClCompile Include="src\Examples\ExampleBase.cpp" />
+    <ClCompile Include="src\Examples\PPDisplayDeferred.cpp" />
+    <ClCompile Include="src\Examples\PPEffectInverseColor.cpp" />
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\System\Application\Application.cpp" />
+    <ClCompile Include="src\System\Application\StateBase.cpp" />
+    <ClCompile Include="src\System\ECS\Component.cpp" />
+    <ClCompile Include="src\System\ECS\Entity.cpp" />
+    <ClCompile Include="src\System\ECS\Listener.cpp" />
+    <ClCompile Include="src\System\ECS\Manager.cpp" />
+    <ClCompile Include="src\System\ECS\System.cpp" />
+    <ClCompile Include="src\System\ECS\SystemList.cpp" />
+    <ClCompile Include="src\System\ECS\Transform.cpp" />
+    <ClCompile Include="src\System\Events\Dispatcher.cpp" />
+    <ClCompile Include="src\System\Loader\Loader.cpp" />
+    <ClCompile Include="src\System\Logger\Logger.cpp" />
+    <ClCompile Include="src\System\Logger\Stopwatch.cpp" />
+    <ClCompile Include="src\System\Renderer\Debug\BulletDebugDraw.cpp" />
+    <ClCompile Include="src\System\Renderer\Deferred\DeferredRenderer.cpp" />
+    <ClCompile Include="src\System\Renderer\Deferred\FBO.cpp" />
+    <ClCompile Include="src\System\Renderer\Lights\Lights.cpp" />
+    <ClCompile Include="src\System\Renderer\Lights\LightSystems.cpp" />
+    <ClCompile Include="src\System\Renderer\MasterRenderer.cpp" />
+    <ClCompile Include="src\System\Renderer\Particles\ParticleSystem.cpp" />
+    <ClCompile Include="src\System\Renderer\PostProcessing\SSR.cpp" />
+    <ClCompile Include="src\System\Renderer\Shader\Shader.cpp" />
+    <ClCompile Include="src\System\Renderer\Shadow\ShadowBox.cpp" />
+    <ClCompile Include="src\System\Renderer\Shadow\ShadowRenderer.cpp" />
+    <ClCompile Include="src\System\Renderer\Skybox\Skybox.cpp" />
+    <ClCompile Include="src\System\Renderer\Systems\AnimationRenderer.cpp" />
+    <ClCompile Include="src\System\Renderer\Systems\AssertRenderer.cpp" />
+    <ClCompile Include="src\System\Resource\ResourceManager.cpp" />
+    <ClCompile Include="src\System\System\Debug.cpp" />
+    <ClCompile Include="src\System\System\FileSystem.cpp" />
+    <ClCompile Include="src\System\System\Keyboard.cpp" />
+    <ClCompile Include="src\System\System\ToggleKey.cpp" />
+    <ClCompile Include="src\System\Window\Window.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
