@@ -1,3 +1,14 @@
+Roadmap
+
+
+	- Complete refactoring
+	- Assets
+		- Shared Ptr Mesh
+		- Mesh Constructor Loads
+		- Mesh Destructor Deletes
+	- ECS -> https://www.youtube.com/watch?v=FmPZG4ETcMc after 1.05h
+	- Use new Event System from one of my repos
+
 Post Processing
 
 	- Gamma correction
