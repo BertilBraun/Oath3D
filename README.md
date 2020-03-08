@@ -308,6 +308,7 @@ Extras
 	- Terrain (CDLOD)
 	- Water
 	- Grass
+	- https://github.com/songrun/SeamAwareDecimater
 
 Fixes
 
